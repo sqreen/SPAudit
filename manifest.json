@@ -1,0 +1,19 @@
+{
+  "name" : "SPAudit",
+  "version" : "0.1.0",
+  "description" : "SPAudit",
+  "background" : {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "devtools_page": "devtools.html",
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "permissions": [
+    "<all_urls>",
+    "webNavigation",
+    "debugger"
+  ],
+  "manifest_version": 2,
+  "content_scripts": []
+}
