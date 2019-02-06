@@ -8,7 +8,6 @@ chrome.devtools.panels.create('SPAudit',
         const cdt = new ChromeDebuggerDriver();
         await cdt.start();
 
-
         panel.onShown.addListener((panelWindow) => {
 
             panelWindow.document.addEventListener(InstructionEvent.TYPE, async (instruction) => {

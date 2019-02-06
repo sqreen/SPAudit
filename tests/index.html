@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<button id="btn">click me</button>
+<button id="btn2">click me</button>
+<button id="btn3">click me</button>
+<div id="out"></div>
+
+<script>
+    function click() {
+        document.getElementById('out')
+            .innerText += 'a';
+    }
+
+    document.getElementById('btn').addEventListener('click', click);
+    document.getElementById('btn2').addEventListener('click', function named () {
+        document.getElementById('out')
+            .innerText += 'b';
+    });
+
+</script>
+<script src="page.js"></script>
+
+</body>
+</html>
