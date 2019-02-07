@@ -12,6 +12,37 @@ const getAllNodeIds = async function (selector = '*') {
     return [rootId].concat(nodeIds);
 };
 
+async function renderNodeDetails (nodeId, objectId, listeners) {
+
+    const main = document.createElement('div');
+    main.setAttribute('class', 'row');
+
+    const btn = document.createElement('button');
+    main.appendChild(btn);
+    btn.textContent = 'highlight';
+    btn.addEventListener('click', async () => {
+
+        await ChromeDebug.DOM.hideHighlight();
+        await ChromeDebug.DOM.highlightNode(nodeId);
+    });
+
+    const btn2 = document.createElement('button');
+    main.appendChild(btn2);
+    btn2.textContent = 'un-highlight';
+    btn2.addEventListener('click', async () => {
+
+        await ChromeDebug.DOM.hideHighlight();
+    });
+
+    const raw = document.createElement('div');
+    raw.setAttribute('class', 'col-12');
+
+    main.appendChild(raw);
+    raw.innerText = JSON.stringify({ nodeId, objectId, listeners }, nodeId, 2);
+
+    return main;
+}
+
 async function renderNode(nodeId, objectId, listeners) {
 
     const a = document.createElement('a');
@@ -30,7 +61,8 @@ async function renderNode(nodeId, objectId, listeners) {
     div.setAttribute('id', 'tab-' + nodeId);
     div.setAttribute('role', 'tabpanel');
     div.setAttribute('aria-labelledby', 'list-profile-list');
-    div.innerText = JSON.stringify(listeners, null, 2);
+    const content = await renderNodeDetails(nodeId, objectId, listeners);
+    div.appendChild(content);
 }
 
 const cleanup = function (node) {

@@ -3,12 +3,13 @@
 chrome.devtools.panels.create('SPAudit',
     null,
     'panel.html',
-    async function (panel) {
+    function (panel) {
 
         const cdt = new ChromeDebuggerDriver();
-        await cdt.start();
 
-        panel.onShown.addListener((panelWindow) => {
+        panel.onShown.addListener(async (panelWindow) => {
+
+            await cdt.start();
 
             panelWindow.document.addEventListener(InstructionEvent.TYPE, async (instruction) => {
 
@@ -18,5 +19,10 @@ chrome.devtools.panels.create('SPAudit',
                     .then(instruction.resolve)
                     .catch(instruction.reject);
             });
+        });
+
+        panel.onHidden.addListener(async () => {
+
+            await cdt.stop()
         });
     });

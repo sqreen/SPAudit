@@ -9,30 +9,39 @@
     <script src="lib/CD.js"></script>
   </head>
   <body>
-  <div class="input-group">
-    <input type="text" class="form-control" placeholder="query selector" id="querySelector">
-    <input type="text" class="form-control" placeholder="events filter" id="eventsFilter">
-    <div class="input-group-append">
-      <button class="btn btn-outline-primary" type="button" id="filterBtn">Find nodes</button>
+  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#DOM" role="tab" aria-controls="pills-home" aria-selected="true">DOM</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#JS" role="tab" aria-controls="pills-profile" aria-selected="false">JS</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="DOM" role="tabpanel" aria-labelledby="pills-home-tab">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="query selector" id="querySelector">
+        <input type="text" class="form-control" placeholder="events filter" id="eventsFilter">
+        <div class="input-group-append">
+          <button class="btn btn-outline-primary" type="button" id="filterBtn">Find nodes</button>
+        </div>
+      </div>
+
+      <br/>
+      <div class="row">
+        <div class="col-4">
+          <div class="list-group" id="list-tab" role="tablist">
+          </div>
+        </div>
+        <div class="col-8">
+          <div class="tab-content" id="nav-tabContent">
+          </div>
+        </div>
+      </div>
     </div>
+    <div class="tab-pane fade" id="JS" role="tabpanel" aria-labelledby="pills-profile-tab">JS</div>
   </div>
 
-  <br/>
-  <div class="row">
-    <div class="col-4">
-      <div class="list-group" id="list-tab" role="tablist">
-        <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Profile</a>
-        <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Messages</a>
-        <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Settings</a>
-      </div>
-    </div>
-    <div class="col-8">
-      <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">bb</div>
-        <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">cc</div>
-        <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">dd</div>
-      </div>
-    </div>
 
 
   <script src="panel.js"></script>
