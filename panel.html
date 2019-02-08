@@ -5,8 +5,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/acorn/6.0.7/acorn.js"></script>
+    <script src="https://unpkg.com/esprima@~4.0/dist/esprima.js"></script>
     <script src="lib/InstructionEvent.js"></script>
     <script src="lib/CD.js"></script>
+
+    <link rel="stylesheet" href="assets/prism/prism.css">
+    <script src="assets/prism/prism.js"></script>
   </head>
   <body>
   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -14,7 +18,10 @@
       <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#DOM" role="tab" aria-controls="pills-home" aria-selected="true">DOM</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#JS" role="tab" aria-controls="pills-profile" aria-selected="false">JS</a>
+      <a class="nav-link" id="pills-profile-tabTODO" data-toggle="pill" href="#JS" role="tab" aria-controls="pills-profile" aria-selected="false">JS</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="pills-profile-tabTODO2" data-toggle="pill" href="#analysisMode" role="tab" aria-controls="pills-profile" aria-selected="false">Analysis mode</a>
     </li>
   </ul>
   <div class="tab-content" id="pills-tabContent">
@@ -26,7 +33,6 @@
           <button class="btn btn-outline-primary" type="button" id="filterBtn">Find nodes</button>
         </div>
       </div>
-
       <br/>
       <div class="row">
         <div class="col-4">
@@ -39,11 +45,19 @@
         </div>
       </div>
     </div>
-    <div class="tab-pane fade" id="JS" role="tabpanel" aria-labelledby="pills-profile-tab">JS</div>
+    <div class="tab-pane fade" id="JS" role="tabpanel" aria-labelledby="pills-profile-tab">
+      <button id="scanJS" class="btn btn-outline-primary">Scan JavaScript</button>
+      <br/>
+      <div class="accordion" id="accordionJS"></div>
+
+    </div>
+    <div class="tab-pane fade" id="analysisMode" role="tabpanel" aria-labelledby="pills-profile-tab">
+      analysisMode
+    </div>
   </div>
 
-
-
-  <script src="panel.js"></script>
+  <script src="lib/util.js"></script>
+  <script src="lib/panel.dom.js"></script>
+  <script src="lib/panel.js.js"></script>
   </body>
 </html>

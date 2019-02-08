@@ -8,7 +8,7 @@
     ]
   },
   "devtools_page": "devtools.html",
-  "content_security_policy": "script-src 'self' https://cdnjs.cloudflare.com/ajax/libs/acorn/6.0.7/acorn.js https://code.jquery.com/jquery-3.3.1.slim.min.js https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js 'unsafe-eval'; object-src 'self'",
+  "content_security_policy": "script-src 'self' https://cdnjs.cloudflare.com/ajax/libs/acorn/6.0.7/acorn.js https://code.jquery.com/jquery-3.3.1.slim.min.js https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js https://unpkg.com/esprima@~4.0/dist/esprima.js 'unsafe-eval'; object-src 'self'",
   "permissions": [
     "<all_urls>",
     "webNavigation",
